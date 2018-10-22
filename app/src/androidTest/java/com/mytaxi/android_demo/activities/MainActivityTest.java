@@ -40,10 +40,15 @@ public class MainActivityTest {
     public void setUp() throws Exception {
         mActivity = mActivityTestRule.getActivity();
 
+       }
+
+    @Test
+    public void testCallSearchResult()
+    {
         //login into myTaxi Demo
         waitNseconds(5);
-        onView(withId(R.id.edt_username))
-                .perform(click());
+//        onView(withId(R.id.edt_username))
+//                .perform(click());
 
         onView(withId(R.id.edt_username))
                 .perform(replaceText(uUsername), closeSoftKeyboard());
@@ -54,11 +59,6 @@ public class MainActivityTest {
         onView(withId(R.id.btn_login))
                 .perform(click());
 
-}
-
-    @Test
-    public void testCallSearchResult()
-    {
         waitNseconds(5);
 
         //Search for "sa" text in the input text bar
